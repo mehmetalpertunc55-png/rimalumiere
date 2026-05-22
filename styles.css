@@ -513,6 +513,7 @@ header {
    ============================================================ */
 footer {
     padding: 3rem var(--padding-page);
+    padding-bottom: calc(3rem + env(safe-area-inset-bottom));
     text-align: center;
     border-top: 1px solid var(--border-color);
     font-size: 0.9rem;
@@ -593,10 +594,9 @@ footer {
    ============================================================ */
 .hamburger-menu {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
+    position: relative;
     width: 24px;
-    height: 18px;
+    height: 16px;
     background: none;
     border: none;
     padding: 0;
@@ -606,15 +606,24 @@ footer {
 }
 
 .hamburger-menu .bar {
+    position: absolute;
     width: 100%;
     height: 2px;
     background-color: var(--overlay-text);
-    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
-    transform-origin: left center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.3s ease, 
+                top 0.3s ease, 
+                background-color 0.3s ease;
 }
 
+.hamburger-menu .bar:nth-child(1) { top: 0; }
+.hamburger-menu .bar:nth-child(2) { top: 7px; }
+.hamburger-menu .bar:nth-child(3) { top: 14px; }
+
+/* Symmetrical X transition when open */
 .hamburger-menu.open .bar:nth-child(1) {
-    transform: rotate(45deg) translate(2px, -2px);
+    top: 7px;
+    transform: rotate(45deg);
     background-color: var(--text-color);
 }
 
@@ -623,7 +632,8 @@ footer {
 }
 
 .hamburger-menu.open .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(2px, 2px);
+    top: 7px;
+    transform: rotate(-45deg);
     background-color: var(--text-color);
 }
 
@@ -663,7 +673,10 @@ footer {
 
 @media (max-width: 1024px) {
     header {
-        padding: 1.5rem 5%;
+        padding-top: calc(1.5rem + env(safe-area-inset-top));
+        padding-left: calc(5% + env(safe-area-inset-left));
+        padding-right: calc(5% + env(safe-area-inset-right));
+        padding-bottom: 1.5rem;
         mix-blend-mode: normal; /* Avoid issues with overlay color mixing on mobile */
         background: transparent;
         z-index: 200; /* Ensure header is above overlay */
@@ -695,7 +708,7 @@ footer {
     .nav-links {
         position: absolute;
         top: calc(100% - 10px);
-        right: 5%;
+        right: calc(5% + env(safe-area-inset-right));
         width: 220px;
         height: auto;
         background: rgba(10, 10, 10, 0.95); /* Premium glassmorphic background */
