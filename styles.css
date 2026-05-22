@@ -661,7 +661,7 @@ footer {
     transition: stroke var(--transition-fast), fill var(--transition-fast);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     header {
         padding: 1.5rem 5%;
         mix-blend-mode: normal; /* Avoid issues with overlay color mixing on mobile */
