@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title">RİMALUMİERE</title>
+    <meta name="description" content="Siyah ve beyazın uyumuyla oluşturulmuş minimalist sanat portföyü.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="page-loader">
+        <div class="loader-logo">R<span class="heart-i-lower">I</span>MALUM<span class="heart-i-lower">I</span>ERE</div>
+    </div>
+
+    <header>
+        <a href="#" class="logo hover-target">R<span class="heart-i">I</span>MALUM<span class="heart-i">I</span>ERE</a>
+        <nav class="nav-links" id="nav-links">
+            <a href="#gallery" class="hover-target" data-i18n="nav_gallery">Mumlarımız</a>
+            <a href="#about" class="hover-target" data-i18n="nav_about">Hakkımızda</a>
+            <button id="lang-toggle" class="theme-toggle hover-target">EN</button>
+            <button id="theme-toggle" class="theme-toggle hover-target" aria-label="Aydınlık Mod"></button>
+        </nav>
+        <button class="hamburger-menu hover-target" id="hamburger-menu" aria-label="Menü" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <main>
+
+        <!-- Hero — parallax bg layer eklendi -->
+        <section class="hero reveal">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1>R<span class="heart-i">I</span>MALUM<span class="heart-i">I</span>ERE</h1>
+                <p data-i18n="hero_desc">RIMALUMIERE mumları, tamamen doğal ve organik soya wax ile yapılmış mumlardır. Aşağıdaki görsellerde olduğu gibi RIMALUMIERE ışığınız olsun.</p>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="gallery" id="gallery">
+            <h2 class="gallery-title reveal" data-i18n="gallery_title">Mumlarımız</h2>
+
+
+            <div class="grid">
+                <div class="item reveal hover-target" data-category="cikolata" data-desc="Çikolatalı kokusunun sıcaklığıyla evinizi sarar.">
+                    <img src="mum-1.png" alt="Çikolatalı Mum" loading="lazy">
+                    <div class="item-info">
+                        <h3 data-i18n="item1_title">Çikolatalı Mum</h3>
+                    </div>
+                </div>
+                <div class="item reveal hover-target" data-category="gul" data-desc="Taze gül kokusunun hafifliğini her odaya taşır.">
+                    <img src="mum-2.png" alt="Gül Kokulu Mum" loading="lazy">
+                    <div class="item-info">
+                        <h3 data-i18n="item2_title">Gül Kokulu Mum</h3>
+                    </div>
+                </div>
+                <div class="item reveal hover-target" data-category="gul" data-desc="Taze gül kokusunun hafifliğini her odaya taşır.">
+                    <img src="mum-3.png" alt="Gül Kokulu Mum" loading="lazy">
+                    <div class="item-info">
+                        <h3 data-i18n="item3_title">Gül Kokulu Mum</h3>
+                    </div>
+                </div>
+                <div class="item reveal hover-target" data-category="visne" data-desc="Vişnenin meyveli ve tatlı kokusu evinize huzur getirir.">
+                    <img src="mum-4.png" alt="Vişneli Mum" loading="lazy">
+                    <div class="item-info">
+                        <h3 data-i18n="item4_title">Vişneli Mum</h3>
+                    </div>
+                </div>
+                <div class="item reveal hover-target" data-category="cikolata" data-desc="Çikolatalı kokusunun sıcaklığıyla evinizi sarar.">
+                    <img src="mum-5.png" alt="Çikolatalı Mum" loading="lazy">
+                    <div class="item-info">
+                        <h3 data-i18n="item5_title">Çikolatalı Mum</h3>
+                    </div>
+                </div>
+                <div class="item reveal hover-target" data-category="yasemin" data-desc="Yasemin çiçeklerinin rahatlatıcı kokusuyla sakinlik verir.">
+                    <img src="mum-6.jpeg" alt="Yaseminli Mum" loading="lazy">
+                    <div class="item-info">
+                        <h3 data-i18n="item6_title">Yaseminli Mum</h3>
+                    </div>
+                </div>
+                <div class="item reveal hover-target" data-category="botanik" data-desc="Doğanın tazeleyici hissini evinize getirir.">
+                    <img src="mum-7.jpeg" alt="Botanik Mum" loading="lazy">
+                    <div class="item-info">
+                        <h3 data-i18n="item7_title">Botanik Mum</h3>
+                    </div>
+                </div>
+                <div class="item reveal hover-target" data-category="botanik" data-desc="Doğanın tazeleyici hissini evinize getirir.">
+                    <img src="mum-8.jpeg" alt="Botanik Mum" loading="lazy">
+                    <div class="item-info">
+                        <h3 data-i18n="item8_title">Botanik Mum</h3>
+                    </div>
+                </div>
+                <div class="item reveal hover-target" data-category="gul" data-desc="Taze gül kokusunun hafifliğini her odaya taşır.">
+                    <img src="mum-9.jpeg" alt="Gül Kokulu Mum" loading="lazy">
+                    <div class="item-info">
+                        <h3 data-i18n="item9_title">Gül Kokulu Mum</h3>
+                    </div>
+                </div>
+                <div class="item reveal hover-target" data-category="gul" data-desc="Taze gül kokusunun hafifliğini her odaya taşır.">
+                    <img src="mum-10.jpeg" alt="Gül Kokulu Mum" loading="lazy">
+                    <div class="item-info">
+                        <h3 data-i18n="item10_title">Gül Kokulu Mum</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about reveal" id="about">
+            <h2 class="about-title" data-i18n="about_title">Mağazamız<br>Hakkında</h2>
+            <div class="about-content">
+                <p data-i18n="about_desc">RIMALUMIERE, 26 Aralık 2025'te kurulmuş olup, doğaya saygılı ve sağlıklı bir anlayışla el yapımı mumlar üretir. %100 organik soya wax kullanılan bu mumlar, zararlı kimyasallar içermez ve temiz bir yanış sağlar. Kişiye özel tasarım seçenekleriyle hem size özel hem de anlamlı hediyeler sunar. Doğal kokuları ve şık görünümleriyle yaşam alanlarınıza huzur ve estetik katar.</p>
+                <div class="contact">
+                    <div class="contact-item">
+                        <h4 data-i18n="contact_title">İletişim</h4>
+                        <a href="mailto:seldasinemtunc@gmail.com" class="hover-target">seldasinemtunc@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h4 data-i18n="social_title">Sosyal</h4>
+                        <a href="#" class="hover-target" style="display: block; margin-bottom: 0.5rem;">@rimalumiere <span style="font-family: 'Inter', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6; margin-left: 10px; vertical-align: middle;">Instagram</span></a>
+                        <a href="#" class="hover-target" style="display: block;">RIMA LUMİERE <span style="font-family: 'Inter', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6; margin-left: 10px; vertical-align: middle;">Shopier</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p data-i18n="footer_text">@R<span class="heart-i-lower">I</span>MALUM<span class="heart-i-lower">I</span>ERE</p>
+    </footer>
+
+    <!-- Candle Modal -->
+    <div class="modal-overlay" id="candle-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal">
+            <button class="modal-close" aria-label="Kapat">✕</button>
+            <div class="modal-candle"></div>
+            <h2 class="modal-title" id="modal-title"></h2>
+            <p class="modal-desc" id="modal-desc"></p>
+        </div>
+    </div>
+
+    <script src="script.js?v=3"></script>
+</body>
+</html>

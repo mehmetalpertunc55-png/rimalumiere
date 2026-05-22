@@ -1,0 +1,31 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Local development files
+.env
+.env.local
+.env.*.local
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Project specific
+.gemini/
+.system_generated/
+/scratch/
+/logs/
+/implementation_plan.md
+/task.md
+/walkthrough.md
