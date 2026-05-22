@@ -666,6 +666,7 @@ footer {
         padding: 1.5rem 5%;
         mix-blend-mode: normal; /* Avoid issues with overlay color mixing on mobile */
         background: transparent;
+        z-index: 200; /* Ensure header is above overlay */
     }
     
     /* Ensure the logo is properly visible and doesn't blend inappropriately */
@@ -677,6 +678,7 @@ footer {
 
     .hamburger-menu {
         display: flex;
+        z-index: 200;
     }
     
     .hamburger-menu .bar {
@@ -684,61 +686,92 @@ footer {
         background-color: var(--text-color);
     }
     
+    /* Overlay sits just below header (190 < 200) so header isn't blurred */
+    .nav-overlay {
+        z-index: 190;
+    }
+    
+    /* Compact elegant top-right dropdown instead of full drawer */
     .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        max-width: 320px;
-        height: 100vh;
-        background: rgba(10, 10, 10, 0.85); /* Premium glassmorphic background */
+        position: absolute;
+        top: calc(100% - 10px);
+        right: 5%;
+        width: 220px;
+        height: auto;
+        background: rgba(10, 10, 10, 0.95); /* Premium glassmorphic background */
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-        padding: 3rem 1.5rem;
-        z-index: 150;
-        transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        align-items: stretch;
+        gap: 0.4rem;
+        padding: 1rem;
+        z-index: 250;
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.95) translateY(-10px);
+        transform-origin: top right;
+        transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    visibility 0.3s;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
     
     [data-theme="light"] .nav-links {
-        background: rgba(245, 245, 245, 0.85);
-        border-left: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(245, 245, 245, 0.95);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     }
     
     .nav-links.open {
-        right: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1) translateY(0);
     }
     
-    .nav-links a {
-        font-size: 1.1rem;
-        letter-spacing: 3px;
+    /* Compact Menu links & buttons styled with clear highlights and large click areas */
+    .nav-links a,
+    .nav-links button {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0.8rem 1rem;
+        font-size: 0.85rem;
+        font-family: var(--font-body);
+        text-transform: uppercase;
+        letter-spacing: 2px;
         color: var(--text-color) !important;
-        position: relative;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color var(--transition-fast), color var(--transition-fast);
+        border: none;
+        background: none;
+        cursor: none; /* Custom flame cursor takes over */
+        box-sizing: border-box;
+    }
+    
+    /* Interactive Highlight States */
+    .nav-links a:hover,
+    .nav-links button:hover {
+        background-color: rgba(255, 255, 255, 0.08) !important;
+    }
+    
+    [data-theme="light"] .nav-links a:hover,
+    [data-theme="light"] .nav-links button:hover {
+        background-color: rgba(0, 0, 0, 0.05) !important;
+    }
+    
+    .nav-links button#lang-toggle {
+        justify-content: flex-start;
+    }
+    
+    .nav-links button#theme-toggle {
+        justify-content: flex-start;
     }
     
     .nav-links a::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 1px;
-        background-color: var(--text-color);
-        transition: width var(--transition-fast);
-    }
-    
-    .nav-links a:hover::after {
-        width: 60%;
-    }
-    
-    .theme-toggle, .nav-links button {
-        color: var(--text-color) !important;
-        font-size: 1rem;
+        display: none; /* Remove desktop bottom line animation in favor of block highlight */
     }
 }
